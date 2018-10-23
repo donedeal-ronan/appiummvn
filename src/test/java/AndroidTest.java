@@ -1,5 +1,6 @@
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class AppiumTest extends AndroidSetup {
+public class AndroidTest extends AndroidSetup {
 
     private WebDriverWait wait = new WebDriverWait(driver, 10);
 
@@ -17,12 +18,13 @@ public class AppiumTest extends AndroidSetup {
     }
 
     @AfterClass
-    public static void tearDown() throws Exception {
+    public static void tearDown() {
         driver.quit();
     }
 
+    @Ignore
     @Test
-    public void proofOfConceptTest() throws InterruptedException {
+    public void AndroidProofOfConceptTest() {
         System.out.println("ID: + "+ driver.getSessionId());
 
         String app_package_name = "ie.distilledsch.donedeal.dealerapp.test:id/";
@@ -41,6 +43,20 @@ public class AppiumTest extends AndroidSetup {
         verifyCorrectAccountInfo(app_package_name);
         logout(loginBtn, logoutBtn);
     }
+
+//
+//    private void login() {
+//        String app_package_name = "ie.distilledsch.donedeal.dealerapp.test:id/";
+//        By emailAddress = By.id(app_package_name + "mEmailInputET");
+//        By mPasswordInput = By.id(app_package_name + "mPasswordInputET");
+//        By loginBtn = By.id(app_package_name + "login_button");
+//
+//        driver.findElement(emailAddress).sendKeys("ronan.doyle+dhtest@distilled.ie");
+//        driver.findElement(mPasswordInput).sendKeys("donedeal");
+//
+//        driver.hideKeyboard();
+//        driver.findElement(loginBtn).click();
+//    }
 
     private void login(By emailAddress, By mPasswordInputET, By loginBtn, By btmNavBar) {
         driver.findElement(emailAddress).sendKeys("ronan.doyle+dhtest@distilled.ie");

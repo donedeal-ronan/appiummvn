@@ -1,3 +1,4 @@
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -29,7 +30,7 @@ public class AndroidSetup {
         driver = new AndroidDriver(new URL(APPIUM_URL), capabilities);
     }
 
-    public static AndroidDriver getDriver() {
+    public static AppiumDriver getDriver() {
         return driver;
     }
 }

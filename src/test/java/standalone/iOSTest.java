@@ -1,3 +1,5 @@
+package standalone;
+
 import io.appium.java_client.MobileElement;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

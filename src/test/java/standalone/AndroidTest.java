@@ -1,6 +1,7 @@
+package standalone;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,7 +23,7 @@ public class AndroidTest extends AndroidSetup {
         driver.quit();
     }
 
-    @Ignore
+
     @Test
     public void AndroidProofOfConceptTest() {
         System.out.println("ID: + "+ driver.getSessionId());

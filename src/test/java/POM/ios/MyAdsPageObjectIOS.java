@@ -14,6 +14,9 @@ public class MyAdsPageObjectIOS implements MyAdsPage {
     @iOSFindBy(accessibility = "BMW Z3")
     MobileElement adCard;
 
+    @iOSFindBy(accessibility = "icon custom back arrow")
+    MobileElement backBtn;
+
     String adTitle = "BMW Z3";
     private IOSDriver driver;
 
@@ -28,5 +31,7 @@ public class MyAdsPageObjectIOS implements MyAdsPage {
 
     public void clickAd() {
         adCard.click();
+
+        backBtn.click();
     }
 }

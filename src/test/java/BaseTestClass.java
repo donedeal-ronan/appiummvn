@@ -1,23 +1,27 @@
 import POM.android.MyAdsPageObjectAndroid;
-import POM.generic.LoginPage;
-import POM.generic.LoginPageObject;
-import POM.generic.MyAdsPage;
+import POM.generic.*;
 import POM.ios.MyAdsPageObjectIOS;
 import org.junit.After;
-import org.junit.Before;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 
 public class BaseTestClass extends PlatformBase {
 
+    protected WebDriverWait wait;
+
     protected static LoginPage loginPage;
     protected static MyAdsPage myAdsPage;
+    protected static PlaceAdPage placeAdPage;
 
-    @Before
+    @BeforeClass
     public void setup() throws MalformedURLException {
-        PlatformController.platform = PlatformEnum.ANDROID;
         PlatformController.instance.setup();
+        wait = new WebDriverWait(driver(), 10);
+
         loginPage = new LoginPageObject(driver());
+        placeAdPage = new PlaceAdPageObject(driver(), wait);
 
         switch (PlatformController.platform) {
             case ANDROID:

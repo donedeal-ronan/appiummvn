@@ -43,7 +43,6 @@ public class PlatformController {
                 capabilities.setCapability("deviceName", "Nexus 6P");
                 capabilities.setCapability("platformName", "Android");
                 capabilities.setCapability("app", app.getAbsolutePath());
-                capabilities.setCapability("noReset", true);
                 capabilities.setCapability("appWaitActivity", "ie.distilledsch.donedeal.dealerapp.navigation.BottomNavActivity, "
                         + "ie.distilledsch.donedeal.dealerapp.login.activities.LoginActivity");
 

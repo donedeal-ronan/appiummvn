@@ -6,12 +6,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PlaceAdPageObject implements PlaceAdPage {
-
-    private AppiumDriver driver;
-    private WebDriverWait wait;
 
     @AndroidFindBy(id = "action_place_ad")
     @iOSFindBy(accessibility = "Place Ad")
@@ -29,10 +25,8 @@ public class PlaceAdPageObject implements PlaceAdPage {
     @iOSFindBy(accessibility = "ADD PHOTOS")
     MobileElement addPhotoBtn;
 
-    public PlaceAdPageObject(AppiumDriver driver, WebDriverWait wait) {
+    public PlaceAdPageObject(AppiumDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        this.driver = driver;
-        this.wait = wait;
     }
 
     public void navigateToPlaceAdTab() {

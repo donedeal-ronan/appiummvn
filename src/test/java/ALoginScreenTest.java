@@ -1,6 +1,6 @@
 import org.testng.annotations.Test;
 
-public class ALoginScreenTest extends BaseTestClass {
+public class ALoginScreenTest extends BaseTest {
 
     @Test
     public void login() {

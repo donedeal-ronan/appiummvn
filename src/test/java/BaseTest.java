@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 
-public class BaseTestClass extends PlatformBase {
+public class BaseTest extends PlatformBase {
 
     protected WebDriverWait wait;
 
@@ -21,7 +21,7 @@ public class BaseTestClass extends PlatformBase {
         wait = new WebDriverWait(driver(), 10);
 
         loginPage = new LoginPageObject(driver());
-        placeAdPage = new PlaceAdPageObject(driver(), wait);
+        placeAdPage = new PlaceAdPageObject(driver());
 
         switch (PlatformController.platform) {
             case ANDROID:

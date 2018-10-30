@@ -27,8 +27,10 @@ public class MyAdsPageObjectAndroid implements MyAdsPage {
     }
 
     public void clickAd() {
+        System.out.println("CURRENT ACTIVITY: " + driver.currentActivity());
         adCard.click();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        System.out.println("CURRENT ACTIVITY: " + driver.currentActivity());
         driver.navigate().back();
     }
 }

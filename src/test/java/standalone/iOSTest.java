@@ -83,12 +83,6 @@ public class iOSTest extends iOSSetup {
         driver.findElementByName("cell0").click();
         driver.findElementById("Done").click();
 
-//        try {
-//            Thread.sleep(10000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.findElementById("Save").click();

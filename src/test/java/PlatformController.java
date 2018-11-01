@@ -2,11 +2,15 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+/**
+ * Sets up the platform (which will be changed based on the param supplied to the command line at runtime but defaults
+ * to Android) along with the desired capabilities for each platform.
+ */
 
 public class PlatformController {
 
@@ -14,13 +18,10 @@ public class PlatformController {
     public AppiumDriver driver;
     public static PlatformEnum platform;
 
-    public static WebDriverWait wait;
-
     private File appDir = new File("apps");
     private File app;
 
     private static String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
-
     public void setup() throws MalformedURLException {
         String envVar = System.getProperty("platform");
         if (envVar != null) {

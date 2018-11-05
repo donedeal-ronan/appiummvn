@@ -91,7 +91,7 @@ public class BrowserStackTest {
     }
 
     private static void captureAndSavePhoto(String app_package_name, By btmNavBar) {
-        driver.sendKeyEvent(27);
+//        driver.sendKeyEvent(27);
         waitForView(By.id("com.android.camera2:id/done_button"));
 
         driver.findElement(By.id("com.android.camera2:id/done_button")).click();

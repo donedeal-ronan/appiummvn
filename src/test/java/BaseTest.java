@@ -1,9 +1,10 @@
 import POM.android.MyAdsPageObjectAndroid;
 import POM.generic.*;
 import POM.ios.MyAdsPageObjectIOS;
-import org.junit.After;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import java.net.MalformedURLException;
 
@@ -15,16 +16,18 @@ public class BaseTest extends PlatformBase {
     protected static MyAdsPage myAdsPage;
     protected static PlaceAdPage placeAdPage;
 
-    @BeforeClass
-    public void setup() throws MalformedURLException {
-        PlatformController.instance.setup();
+    @BeforeTest
+    @Parameters({"platform", "udid", "systemPort"})
+    public void setup(String platform, String udid, int systemPort) throws MalformedURLException {
+        PlatformController.instance.setup(platform, udid, systemPort);
         wait = new WebDriverWait(driver(), 10);
 
         loginPage = new LoginPageObject(driver());
         placeAdPage = new PlaceAdPageObject(driver());
 
         switch (PlatformController.platform) {
-            case ANDROID:
+            case ANDROID27:
+            case ANDROID23:
                 myAdsPage = new MyAdsPageObjectAndroid(driver());
                 break;
             case IOS:
@@ -33,7 +36,7 @@ public class BaseTest extends PlatformBase {
         }
     }
 
-    @After
+    @AfterTest
     public void tearDown() {
         PlatformController.instance.tearDown();
     }

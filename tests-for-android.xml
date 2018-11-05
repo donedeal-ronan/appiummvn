@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Tests for Android" parallel="false">
-    <parameter name="platform" value="android"/>
-    <test name="LoginScreen">
+<suite name="Tests for Android" verbose="2" parallel="false" thread-count="2">
+    <test name="Login screen test Android 8.1.0">
+        <parameter name="platform" value="Android 8.1.0"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="systemPort" value="8201"/>
         <classes>
             <class name="ALoginScreenTest"/>
         </classes>
     </test>
-    <test name="MyAdsScreen">
+
+    <test name="MyAds screen test Android 8.1.0">
+        <parameter name="platform" value="Android 8.1.0"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="systemPort" value="8201"/>
         <classes>
             <class name="MyAdsTest"/>
         </classes>
     </test>
-    <test name="PlaceAdScreen">
+
+    <test name="PlaceAd screen test Android 8.1.0">
+        <parameter name="platform" value="Android 8.1.0"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="systemPort" value="8201"/>
         <classes>
             <class name="PlaceAdTest"/>
         </classes>

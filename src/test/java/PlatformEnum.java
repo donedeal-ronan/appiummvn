@@ -1,4 +1,5 @@
 public enum PlatformEnum {
-    ANDROID,
+    ANDROID27,
+    ANDROID23,
     IOS
 }

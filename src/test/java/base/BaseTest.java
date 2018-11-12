@@ -1,3 +1,5 @@
+package base;
+
 import POM.android.MyAdsPageObjectAndroid;
 import POM.generic.*;
 import POM.ios.MyAdsPageObjectIOS;

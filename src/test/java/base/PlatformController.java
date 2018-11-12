@@ -1,3 +1,6 @@
+package base;
+
+import enums.PlatformEnum;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -31,7 +34,7 @@ public class PlatformController {
 
         String[] platformDetails = platform2.split(" ");
 
-        platform = PlatformEnum.valueOf(platformDetails[0].toUpperCase());
+        platform = PlatformEnum.ANDROID27;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         switch (platform) {

@@ -1,3 +1,4 @@
+import base.BaseTest;
 import org.testng.annotations.Test;
 
 public class ALoginScreenTest extends BaseTest {

@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Tests for Android" verbose="2" parallel="false" thread-count="2">
     <test name="Login screen test Android 8.1.0">
-        <parameter name="platform" value="Android 8.1.0"/>
+        <parameter name="platform" value="Android27 8.1.0"/>
         <parameter name="udid" value="emulator-5554"/>
         <parameter name="systemPort" value="8201"/>
         <classes>

@@ -25,6 +25,11 @@ public class LoginPageObject implements LoginPage {
     @iOSFindBy(accessibility = "LOGIN")
     MobileElement loginBtn;
 
+    @AndroidFindBy(id = "action_my_ads")
+    @iOSFindBy(accessibility = "My Ads")
+    private MobileElement myAdsTab;
+
+
     public LoginPageObject(AppiumDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         this.driver = driver;
@@ -32,10 +37,12 @@ public class LoginPageObject implements LoginPage {
 
     public void insertEmailAddress() {
         emailInput.sendKeys(emailAddress);
+        driver.hideKeyboard();
     }
 
     public void insertPassword() {
         passwordInput.sendKeys(password);
+        driver.hideKeyboard();
     }
 
     public void clickLoginBtn() {
@@ -46,6 +53,10 @@ public class LoginPageObject implements LoginPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void checkIsOnMyAdsScreen() {
+        assert myAdsTab.isDisplayed();
     }
 
     public void login() {

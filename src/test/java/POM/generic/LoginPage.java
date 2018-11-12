@@ -5,4 +5,5 @@ public interface LoginPage {
     void insertPassword();
     void clickLoginBtn();
     void login();
+    void checkIsOnMyAdsScreen();
 }

@@ -3,6 +3,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -19,12 +20,15 @@ public class PlatformController {
     public static PlatformController instance = new PlatformController();
     public AppiumDriver driver;
     public static PlatformEnum platform;
+    private AppiumDriverLocalService service;
 
     private File appDir = new File("apps");
     private File app;
 
     private static String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
     public void setup(String platform2, String udid, int systemPort) throws MalformedURLException {
+        startAppiumService();
+
         if (driver != null) {
             return;
         }
@@ -69,6 +73,11 @@ public class PlatformController {
         }
     }
 
+    private void startAppiumService() {
+        service = AppiumDriverLocalService.buildDefaultService();
+        service.start();
+    }
+
     public void tearDown() {
         try {
             Thread.sleep(10000);
@@ -79,5 +88,6 @@ public class PlatformController {
             driver.quit();
             driver = null;
         }
+        service.stop();
     }
 }

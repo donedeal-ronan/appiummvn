@@ -33,9 +33,7 @@ public class PlatformController {
             return;
         }
 
-        String[] platformDetails = platform2.split(" ");
-
-        platform = PlatformEnum.valueOf(platformDetails[0].toUpperCase());
+        platform = PlatformEnum.valueOf(platform2.toUpperCase());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         switch (platform) {
@@ -45,7 +43,7 @@ public class PlatformController {
 
                 capabilities.setCapability("device,", "Android");
                 capabilities.setCapability("deviceName", "Nexus");
-                capabilities.setCapability("platformName", platformDetails[0]);
+                capabilities.setCapability("platformName", platform2.substring(0, platform2.length()-2));
                 capabilities.setCapability(MobileCapabilityType.UDID, udid);
                 capabilities.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, systemPort);
                 capabilities.setCapability("app", app.getAbsolutePath());
@@ -59,10 +57,10 @@ public class PlatformController {
                 app = new File(appDir + "/ios", "dealerApp.app");
 
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
-                capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformDetails[0]);
+                capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platform2);
                 capabilities.setCapability("deviceName", "iPhone XR");
                 capabilities.setCapability("wdaLocalPort", systemPort);
-                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformDetails[1]);
+                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform2);
                 capabilities.setCapability(MobileCapabilityType.UDID, udid);
                 System.out.println("ABSOLUTE PATH: " + app.getAbsolutePath());
                 capabilities.setCapability("app", app.getAbsolutePath());
@@ -75,6 +73,9 @@ public class PlatformController {
 
     private void startAppiumService() {
         service = AppiumDriverLocalService.buildDefaultService();
+        if (service.isRunning()) {
+            service.stop();
+        }
         service.start();
     }
 

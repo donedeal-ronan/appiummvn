@@ -53,7 +53,8 @@ public class PlatformController {
 
                 driver = new AndroidDriver(new URL(APPIUM_URL), capabilities);
                 break;
-            case IOS:
+            case IOS11:
+            case IOS12:
                 app = new File(appDir + "/ios", "dealerApp.app");
 
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");

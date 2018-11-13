@@ -30,7 +30,8 @@ public class BaseTest extends PlatformBase {
             case ANDROID23:
                 myAdsPage = new MyAdsPageObjectAndroid(driver());
                 break;
-            case IOS:
+            case IOS11:
+            case IOS12:
                 myAdsPage = new MyAdsPageObjectIOS(driver());
                 break;
         }

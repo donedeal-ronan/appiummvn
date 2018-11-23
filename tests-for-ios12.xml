@@ -3,7 +3,7 @@
 
     <test name="Login screen test iOS 12.0 - iPhone XR">
         <parameter name="platform" value="iOS12"/>
-        <parameter name="udid" value="CBD18BFA-1792-4DF5-A923-58B003395E67"/>
+        <parameter name="udid" value="44607C52-A4E5-4BB0-A33D-97C6D07CF935"/>
         <parameter name="systemPort" value="8100"/>
         <classes>
             <class name="ALoginScreenTest"/>
@@ -11,7 +11,7 @@
     </test>
     <test name="MyAds screen test iOS 12.0 - iPhone XR">
         <parameter name="platform" value="iOS12"/>
-        <parameter name="udid" value="CBD18BFA-1792-4DF5-A923-58B003395E67"/>
+        <parameter name="udid" value="44607C52-A4E5-4BB0-A33D-97C6D07CF935"/>
         <parameter name="systemPort" value="8100"/>
         <classes>
             <class name="MyAdsTest"/>

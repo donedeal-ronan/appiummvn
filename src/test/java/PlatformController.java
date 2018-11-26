@@ -74,10 +74,11 @@ public class PlatformController {
 
     private void startAppiumService() {
         service = AppiumDriverLocalService.buildDefaultService();
-        if (service.isRunning()) {
-            service.stop();
+        if (!service.isRunning()) {
+//            service.stop();
+            service.start();
         }
-        service.start();
+//        service.start();
     }
 
     public void tearDown() {

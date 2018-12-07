@@ -49,3 +49,9 @@ The same format can be used to run the tests on Android
 
 This will target Android 8. The same thing goes here regarding the udid's. They are generally easier to work with than iOS as most emulators will get 
 the same udid across different machines (usually starting with `emulator-5554`).
+
+## Automated  
+The following script will automate running the android and ios tests respectively. Each script will run/has the ability to run the tests against
+multiple versions of each platform, e.g Android 6 & Android 8.  
+`./run_android_tests.sh`  
+`./run_ios_tests.sh`  

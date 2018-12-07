@@ -3,13 +3,13 @@ The following is required in order to be able to run this project.
 
 - Appium
 You can install Appium as follows:
-..- Install node
+⋅⋅- Install node
 `brew install node`
 
-..- Install Appium
+⋅⋅- Install Appium
 `npm install -g appium`
 
-..- Install the appium web driver client
+⋅⋅- Install the appium web driver client
 `npm install wd`
 
 If these options do not work for you then please visit the [Getting Started](http://appium.io/docs/en/about-appium/getting-started/?lang=en) Appium page. 

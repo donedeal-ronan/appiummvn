@@ -36,21 +36,20 @@ public class PlatformController {
         platform = PlatformEnum.valueOf(platform2.toUpperCase());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.UDID, udid);
+        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         switch (platform) {
             case ANDROID27:
             case ANDROID23:
                 app = new File(appDir, "android_dealerAppTest.apk");
 
                 capabilities.setCapability("device,", "Android");
-                capabilities.setCapability("deviceName", "Nexus");
-                capabilities.setCapability("platformName", platform2.substring(0, platform2.length()-2));
-                capabilities.setCapability(MobileCapabilityType.UDID, udid);
+                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Nexus");
+                capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platform2.substring(0, platform2.length()-2));
                 capabilities.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, systemPort);
-                capabilities.setCapability("app", app.getAbsolutePath());
-                capabilities.setCapability("appWaitActivity", "ie.distilledsch.donedeal.dealerapp.navigation.BottomNavActivity, "
+                capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+                capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY, "ie.distilledsch.donedeal.dealerapp.navigation.BottomNavActivity, "
                         + "ie.distilledsch.donedeal.dealerapp.login.activities.LoginActivity");
-                capabilities.setCapability("noReset", true);
-
                 driver = new AndroidDriver(new URL(APPIUM_URL), capabilities);
                 break;
             case IOS11:
@@ -59,14 +58,11 @@ public class PlatformController {
 
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platform2);
-                capabilities.setCapability("deviceName", "iPhone XR");
+                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone XR");
                 capabilities.setCapability("wdaLocalPort", systemPort);
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform2);
-                capabilities.setCapability(MobileCapabilityType.UDID, udid);
                 System.out.println("ABSOLUTE PATH: " + app.getAbsolutePath());
-                capabilities.setCapability("app", app.getAbsolutePath());
-                capabilities.setCapability("noReset", true);
-
+                capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
                 driver = new IOSDriver(new URL(APPIUM_URL), capabilities);
                 break;
         }

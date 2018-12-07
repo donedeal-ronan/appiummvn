@@ -1,6 +1,0 @@
-app_identifier "ie.distilledsch.Dealer-App"
-apple_id "devices@distilled.ie" # Your Apple email address
-itc_team_id "273127"
-
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile

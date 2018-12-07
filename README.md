@@ -1,24 +1,24 @@
 # Setup
 The following is required in order to be able to run this project.
 
-- Appium
+- **Appium**
 You can install Appium as follows:
-⋅⋅- Install node
+**Install node**
 `brew install node`
 
-⋅⋅- Install Appium
+**Install Appium**
 `npm install -g appium`
 
-⋅⋅- Install the appium web driver client
+**Install the appium web driver client**
 `npm install wd`
 
 If these options do not work for you then please visit the [Getting Started](http://appium.io/docs/en/about-appium/getting-started/?lang=en) Appium page. 
 
-- Android SDK
+**Android SDK**
 It is possible to install the Android SDK without the use of the Android Studio IDE, however I'd strongly recommend downloading this IDE
 in order to manage and maintain the Android SDK, as doing so manually can be cumbersome and error prone.
 
-- xcode commandline tools
+**xcode commandline tools**
 While this is not necessary for running the Appium tests, I'd recommend installing the xcode commandline tools for any future interactions with
 the iOS ecosystem.
 `xcode-select --install`

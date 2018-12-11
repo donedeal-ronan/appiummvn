@@ -1,7 +1,7 @@
-package POM.ios;
+package dealerhub.POM.ios;
 
-import POM.TestingUtilsIOS;
-import POM.generic.MyAdsPage;
+import dealerhub.POM.TestingUtilsIOS;
+import dealerhub.POM.generic.MyAdsPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;

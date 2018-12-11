@@ -1,4 +1,4 @@
-package POM.generic;
+package dealerhub.POM.generic;
 
 public interface PlaceAdPage {
     void navigateToPlaceAdTab();

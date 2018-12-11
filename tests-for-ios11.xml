@@ -6,7 +6,7 @@
         <parameter name="udid" value="CD67E6F7-5450-4EB0-9BB4-7AD160204A37"/>
         <parameter name="systemPort" value="8101"/>
         <classes>
-            <class name="ALoginScreenTest"/>
+            <class name="dealerhub.ALoginScreenTest"/>
         </classes>
     </test>
 
@@ -15,12 +15,12 @@
         <parameter name="udid" value="CD67E6F7-5450-4EB0-9BB4-7AD160204A37"/>
         <parameter name="systemPort" value="8100"/>
         <classes>
-            <class name="MyAdsTest"/>
+            <class name="dealerhub.MyAdsTest"/>
         </classes>
     </test>
     <!--<test name="PlaceAdScreen">-->
         <!--<classes>-->
-            <!--<class name="PlaceAdTest"/>-->
+            <!--<class name="dealerhub.PlaceAdTest"/>-->
         <!--</classes>-->
     <!--</test>-->
 </suite>

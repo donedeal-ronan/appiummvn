@@ -1,6 +1,8 @@
-import POM.android.MyAdsPageObjectAndroid;
-import POM.generic.*;
-import POM.ios.MyAdsPageObjectIOS;
+package dealerhub;
+
+import dealerhub.POM.android.MyAdsPageObjectAndroid;
+import dealerhub.POM.generic.*;
+import dealerhub.POM.ios.MyAdsPageObjectIOS;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;

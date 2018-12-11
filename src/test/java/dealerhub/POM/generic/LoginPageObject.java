@@ -1,4 +1,4 @@
-package POM.generic;
+package dealerhub.POM.generic;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
